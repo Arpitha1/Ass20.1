@@ -1,0 +1,27 @@
+How to sign an app in the android?
+
+-->    Export the unsigned package:
+Right click on the project in android studio -> Android Tools -> Export Unsigned Application Package (like here we export our GoogleDriveApp.apk to Desktop)
+
+Sign the application using your keystore and the jarsigner tool (follow below steps):
+
+Open cmd-->change directory where your "jarsigner.exe" exist (like here in my system it exist at "C:\Program Files\Java\jdk1.6.0_17\bin"
+
+Now enter below command in cmd:
+
+jarsigner -verbose -keystore c:\users\android\debug.keystore c:\users\abhi\Desktops\GoogleDriveApp.apk my_keystore_alias
+It will ask you to provide your password: Enter Passphrase for keystore: It will sign your apk.To verify that the signing is successful you can run:
+
+jarsigner -verify c:\users\abhi\Desktops\GoogleDriveApp.apk
+It should come back with: jar verified.
+
+Method 2
+
+If you are using eclipse with ADT, then it is simple to compiled, signed, aligned, and ready the file for distribution.what you have to do just follow this steps.
+
+File > Export.
+Export android application
+Browse-->select your project
+Next-->Next
+These steps will compiled, signed and zip aligned your project and now you are ready to distribute your project or upload at Google Play store.
+
